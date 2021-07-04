@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/habby/static/css/main.b666942c.chunk.css",
-    "main.js": "/habby/static/js/main.ed6ec7cd.chunk.js",
-    "main.js.map": "/habby/static/js/main.ed6ec7cd.chunk.js.map",
+    "main.js": "/habby/static/js/main.94910370.chunk.js",
+    "main.js.map": "/habby/static/js/main.94910370.chunk.js.map",
     "runtime-main.js": "/habby/static/js/runtime-main.897bdce9.js",
     "runtime-main.js.map": "/habby/static/js/runtime-main.897bdce9.js.map",
     "static/js/2.2fe71d8f.chunk.js": "/habby/static/js/2.2fe71d8f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.897bdce9.js",
     "static/js/2.2fe71d8f.chunk.js",
     "static/css/main.b666942c.chunk.css",
-    "static/js/main.ed6ec7cd.chunk.js"
+    "static/js/main.94910370.chunk.js"
   ]
 }
