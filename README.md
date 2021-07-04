@@ -13,6 +13,7 @@ https://www.figma.com/file/D8jphT6aqGj00hKaLiZqyf/Habby?node-id=8%3A24
 
 - create-react-app
 - react-router-dom
+- gh-pages
 
 ### Stylesheets
 

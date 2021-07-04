@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch> 
-          <Route exact path='/' component={() => <Home  color={stateColor.color} dispatchColor={dispatchColor} />}/>
+          <Route exact path='/habby/' component={() => <Home  color={stateColor.color} dispatchColor={dispatchColor} />}/>
         </Switch>
       </Router>
     </div>
