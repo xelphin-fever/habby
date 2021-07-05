@@ -1,6 +1,53 @@
 @import '_variables';
+@import '_mixins';
 
-
-h1 {
-  color: pink;
+.page-home{
+  width: 100vw;
+  height: 100vh;
 }
+
+/* HOME TOP */
+
+.home-top {
+  width: 100%;
+  @include flex($justify: space-around);
+  margin-top: 70px;
+}
+
+.home-activity{
+  @include flex($direction: column);
+  width: fit-content;
+  font-size: 30px;
+}
+
+.home-timer{
+  @include flex($direction: column);
+  width: fit-content;
+  font-size: 50px;
+}
+
+button {
+  background-color: $color1;
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+
+/* HOME BOTTOM */
+
+.home-bottom-bar {
+  width: 100vw;
+  height: 25vh;
+  background-color: $dark;
+  position: fixed;
+  bottom: 0;
+}
+
+.home-bottom{
+  @include flex($justify: space-around);
+  position: absolute;
+  width: 100%;
+  bottom: 30%;
+}
+

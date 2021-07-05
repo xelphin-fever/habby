@@ -24,3 +24,9 @@ https://www.figma.com/file/D8jphT6aqGj00hKaLiZqyf/Habby?node-id=8%3A24
 
 - material-ui
 - material-ui/icons
+
+## Code References
+
+### Timer
+
+https://dev.to/emmaadesile/build-a-timer-using-react-hooks-3he2
