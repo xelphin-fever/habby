@@ -5,3 +5,37 @@
   justify-content: $justify;
   text-align: center;
 }
+
+@mixin scale() {
+  @media screen and (min-width: 500px) {
+    transform : scale(0.7);
+  }
+  @media screen and (min-width: 1000px) {
+    transform : scale(0.9);
+  }
+  @media screen and (min-width: 1500px) {
+    transform : scale(1);
+  }
+}
+
+@mixin centralizeFlex () {
+  display: flex;
+  & > div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  & > div:first-child > span { margin-right: auto; }
+
+  & > div:last-child  > span { margin-left: auto;  }
+
+  & > .centralize-child {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  & > .centralize-child:first-child > span { margin-right: auto; }
+
+  & > .centralize-child:last-child  > span { margin-left: auto;  }
+}

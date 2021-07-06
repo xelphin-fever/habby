@@ -28,10 +28,8 @@ function activityReducer (state, action) {
 // CHANGE TIMER MODE
 function timerReducer (state,action) {
   switch (action.type) {
-    case 'start':
-      return {active: true}
-    case 'stop':
-      return {active: false}
+    case 'update':
+      return {counter: action.payload}
     default:
       throw new Error();
   }

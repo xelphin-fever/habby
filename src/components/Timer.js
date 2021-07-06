@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect} from 'react';
 
 // Timer Code From: https://dev.to/emmaadesile/build-a-timer-using-react-hooks-3he2
 
@@ -33,6 +33,7 @@ const Timer = (props) => {
       }, 1000)
     }
     return () => {
+      props.dispatchCounter({type: "update", payload: counter});
       return clearInterval(intervalId)
     };
   }, [isActive, counter])

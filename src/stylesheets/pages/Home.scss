@@ -1,9 +1,12 @@
 @import '_variables';
 @import '_mixins';
 
+$bottom-bar-height: 25vh;
+
+
 .page-home{
   width: 100vw;
-  height: 100vh;
+  height: 100vh - $bottom-bar-height;
 }
 
 /* HOME TOP */
@@ -12,18 +15,21 @@
   width: 100%;
   @include flex($justify: space-around);
   margin-top: 70px;
+  @include centralizeFlex();
 }
 
 .home-activity{
   @include flex($direction: column);
   width: fit-content;
   font-size: 30px;
+  @include scale();
 }
 
 .home-timer{
   @include flex($direction: column);
   width: fit-content;
   font-size: 50px;
+  @include scale();
 }
 
 button {
@@ -34,11 +40,20 @@ button {
   font-size: 20px;
 }
 
+.home-progress {
+  @include flex($direction: column);
+  @include scale();
+  h1 {
+    font-size: 50px;
+    margin: 5px 0;
+  }
+}
+
 /* HOME BOTTOM */
 
 .home-bottom-bar {
   width: 100vw;
-  height: 25vh;
+  height: $bottom-bar-height;
   background-color: $dark;
   position: fixed;
   bottom: 0;
@@ -51,3 +66,6 @@ button {
   bottom: 30%;
 }
 
+.home-iconText {
+  @include scale();
+}
