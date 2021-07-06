@@ -75,17 +75,17 @@ const Home = (props) => {
       <div className="home-bottom-bar">
         <div className="home-bottom"> {/* TODO: Add Links to Icons to appropriate pages ! Can't navigate if timer on */}
           {/* TAGS */}
-          <IconText size={iconSize} textColor={iconTextColor} moveUp={0} className="home-iconText centralize-child">
+          <IconText size={iconSize} textColor={iconTextColor} moveUp={0} className="home-iconText">
             <BookmarkIcon className="home-icon" style={{ fontSize: iconSize, color: iconColor }}/>
             <h1>TAGS</h1>
           </IconText>
           {/* STATS */}
-          <IconText size={(iconSize-10)} textColor={iconTextColor} moveUp={0} className="home-iconText centralize-child">
+          <IconText size={(iconSize-10)} textColor={iconTextColor} moveUp={0} className="home-iconText">
             <Circle color= {iconColor} size={(iconSize-10)}/>
             <h1 style={{fontSize: ((iconSize-10)/4)}}>STATS</h1>
           </IconText>
           {/* GOALS */}
-          <IconText size={(iconSize)} textColor={iconTextColor} moveUp={30} moveRight={18} className="home-iconText centralize-child">
+          <IconText size={(iconSize)} textColor={iconTextColor} moveUp={30} moveRight={18} className="home-iconText">
             <FlagIcon className="home-icon" style={{ fontSize: (iconSize+20), color: iconColor }}/>
             <h1>GOALS</h1>
           </IconText>

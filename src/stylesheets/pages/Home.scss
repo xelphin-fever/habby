@@ -15,7 +15,6 @@ $bottom-bar-height: 25vh;
   width: 100%;
   @include flex($justify: space-around);
   margin-top: 70px;
-  @include centralizeFlex();
 }
 
 .home-activity{
@@ -23,6 +22,7 @@ $bottom-bar-height: 25vh;
   width: fit-content;
   font-size: 30px;
   @include scale();
+  width: 30vw;
 }
 
 .home-timer{
@@ -30,6 +30,7 @@ $bottom-bar-height: 25vh;
   width: fit-content;
   font-size: 50px;
   @include scale();
+  width: 30vw;
 }
 
 button {
@@ -43,6 +44,7 @@ button {
 .home-progress {
   @include flex($direction: column);
   @include scale();
+  width: 30vw;
   h1 {
     font-size: 50px;
     margin: 5px 0;
