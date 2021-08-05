@@ -1,3 +1,8 @@
+/*
+--- DESCRIPTION
+A timer that also updates Firebase.
+*/
+
 import React, { useState, useEffect} from 'react';
 
 // Timer Code From: https://dev.to/emmaadesile/build-a-timer-using-react-hooks-3he2

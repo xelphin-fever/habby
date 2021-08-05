@@ -1,15 +1,12 @@
+/*
+--- DESCRIPTION
+Used to select activity.
+*/
 import React from 'react';
 import {Circle} from '../stylesheets/components/icons';
 import Selector from '../stylesheets/components/activitySelector';
 // EXAMPLE -> TODO: Get from Firebase instead later
 import {activities, colorID} from '../helper/example';
-
-/*
--- Abstract
-Used to select activity
--- Example
-Select the 'Reading' activity
-*/
 
 /*
 -- TODO:

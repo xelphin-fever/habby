@@ -1,17 +1,7 @@
-
-// FIX: Best to do activity Id reducer and then you can collect both color and title
-
-// CHANGE COLOR SELECTED
-function colorReducer (state, action) {
-  switch (action.type) {
-    case 'reload':
-      return {color: state.date};
-    case 'update':
-      return {color: action.payload}
-    default:
-      throw new Error();
-  }
-}
+/*
+--- DESCRIPTION
+File containing reducers used throughout app. 
+*/
 
 // CHANGE ACTIVITY SELECTED
 function activityReducer (state, action) {
@@ -36,6 +26,4 @@ function timerReducer (state,action) {
 }
 
 
-
-
-export {colorReducer, activityReducer, timerReducer};
+export {activityReducer, timerReducer};

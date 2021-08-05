@@ -1,5 +1,12 @@
+/*
+--- DESCRIPTION
+This is the landing page. From which we can do the following:
+- Select and Record activity
+- See Progress of activity
+- Go to Tags, Stats and Goals pages
+*/
 
-// APP IMPORTS
+// PAGE IMPORTS
 import React, {useState, useReducer, useEffect} from 'react';
 // import { Link } from "react-router-dom";
 import '../stylesheets/pages/Home.scss';

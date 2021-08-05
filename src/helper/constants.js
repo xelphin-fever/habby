@@ -1,4 +1,8 @@
-
+/*
+--- DESCRIPTION
+This file contains constants used throughout project. 
+*/
+// THEME: Colors used throughout app
 const theme = {
   "dark": "#264653",
   "light": "#E9C46A",
@@ -7,6 +11,7 @@ const theme = {
   "color3":"#F4A261"
 };
 
+// ACTIVITY COLORS: Activity color options
 // TODO: add more color options
 const activityColors = [
   "#2A9D8F",

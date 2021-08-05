@@ -1,3 +1,7 @@
+/*
+--- DESCRIPTION
+Shows progress of activity: hours done / hours goal.
+*/
 import React, {useState, useEffect} from 'react';
 import Bar from '../stylesheets/components/progressBar';
 import {activityInfo} from '../helper/example';

@@ -1,15 +1,23 @@
 
+/*
+--- DESCRIPTION
+This file is meant to be used temporarily while developing to test code.
+Later, instead of using these constants, the app will get the information from Firebase.
+*/
+
+// Activity Name
 const activities = {
   2 : "Homework",
   5 : "Reading",
 };
-// color and it's id (only for existing activities)
+// Activity Color
 const colorID = {
   2 : "#2A9D8F",
   5: "#E76F51",
 };
 
-// for each activity: goals == hours wanted, done == hours done
+// Activity Goals and Hours Done
+// goals == hours wanted, done == hours done
 const activityInfo = {
   2 : {
     goals: {daily: 2, weekly: 14, monthly: 60},

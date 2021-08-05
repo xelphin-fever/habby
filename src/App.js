@@ -3,7 +3,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 // import {theme} from './helper/constants';
 
-import Home from './pages/Home'
+import Home from './pages/Home';
+import Tags from './pages/Tags';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Switch> 
           <Route exact path='/habby/' component={() => <Home  />}/>
+          <Route exact path='/habby/tags' component={() => <Tags  />}/>
         </Switch>
       </Router>
     </div>
