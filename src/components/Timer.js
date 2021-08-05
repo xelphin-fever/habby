@@ -41,13 +41,13 @@ const Timer = (props) => {
   // Record Counter
   useEffect(()=> {
     if (props.timerActive === false){
-      if (counter!==0){
+      if (counter!==0){ // if it was on, and has been turned off
         // TODO: Record counter into firebase 
         console.log('Counter timerActive: ', counter)
         setIsActive(false);
       }
       setCounter(0);
-    } else {
+    } else { // if it was off, and has been turned on
       setIsActive(true);
     }
     

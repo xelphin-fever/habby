@@ -23,6 +23,7 @@ $bottom-bar-height: 25vh;
   font-size: 30px;
   @include scale();
   width: 30vw;
+  z-index: 10; /*So that the Selector isn't covered by Timer*/
 }
 
 .home-timer{
@@ -34,11 +35,16 @@ $bottom-bar-height: 25vh;
 }
 
 button {
-  background-color: $color1;
+  background-color: $color1dark;
   color: white;
   border: none;
   padding: 5px 20px;
   font-size: 20px;
+  transition: 0.15s linear;
+  &:hover {
+    background-color: $color1;
+    transform: scale(1.08);
+  }
 }
 
 .home-progress {
@@ -64,7 +70,7 @@ button {
 .home-bottom{
   @include flex($justify: space-around);
   position: absolute;
-  width: 100%;
+  min-width: 100vw;
   bottom: 30%;
 }
 

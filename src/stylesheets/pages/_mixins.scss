@@ -7,10 +7,14 @@
 }
 
 @mixin scale() {
-  @media screen and (min-width: 500px) {
+  transform : scale(0.4);
+  @media screen and (min-width: 700px) {
+    transform : scale(0.6);
+  }
+  @media screen and (min-width: 940px) {
     transform : scale(0.7);
   }
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1200px) {
     transform : scale(0.9);
   }
   @media screen and (min-width: 1500px) {

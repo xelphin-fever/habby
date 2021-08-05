@@ -9,6 +9,15 @@ const Circle = styled.div`
   color: ${props => props.textColor || "black"};
   text-align: center;
   line-height: ${props => props.size+"px" || "75px"};
+  transition: 0.12s linear;
+  &:hover {
+    transform: scale(0.96);
+    transition: 0.1s linear;
+  }
+  &:active {
+    transform: scale(0.93);
+    transition: 0.1s linear;
+  }
 `;
 
 const IconText = styled.div`

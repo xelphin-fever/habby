@@ -1,7 +1,7 @@
 
 // APP IMPORTS
-import React, {useState, useEffect, useReducer} from 'react';
-import { Link } from "react-router-dom";
+import React, {useState, useReducer, useEffect} from 'react';
+// import { Link } from "react-router-dom";
 import '../stylesheets/pages/Home.scss';
 import {theme} from '../helper/constants';
 // Components
@@ -10,22 +10,30 @@ import FlagIcon from '@material-ui/icons/Flag';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import Timer from '../components/Timer';
 import ProgressBar from '../components/ProgressBar';
+import ActivitySelector from '../components/ActivitySelector';
 // Reducers
-import {timerReducer} from '../helper/reducers'
+import {timerReducer, activityReducer} from '../helper/reducers'
+// EXAMPLE -> TODO: Later replace with getting from Firebase
+import {activities, colorID} from '../helper/example';
 
 //
 const Home = (props) => {
 
-  // TODO: Have state for selected activity
+  // --- VARIABLES
+
+  // ACTIVITY VARIABLES
+  const [activityColor, setActivityColor] = useState("white");
+  const [activityName, setActivityName] = useState("No Activities");
+  // Activity Selector
+  const [selectorShow, setSelectorShow] = useState(false);
 
 
   // TIMER VARIABLES
-
   const [timerMode, setTimerMode] = useState("START");
   const [timerStart, setTimerStart] = useState(false);
-
   // Stop/Start Timer
   const changeTimerMode = () => {
+    setSelectorShow(false);
     if (timerStart === false) {
       setTimerMode("STOP");
       // props.dispatchTimer({type: 'start'});
@@ -37,8 +45,46 @@ const Home = (props) => {
     }
   }
 
+  // --- REDUCERS
+
   // Timer Reducer
   const [stateCounter, dispatchCounter] = useReducer(timerReducer, {counter: 0});
+  // Activity Reducer (colorID -> ID is also activity ID)
+  const [stateActivity, dispatchActivity] = useReducer(activityReducer, {id: -1});
+
+  // --- DO ON START
+
+  // Get Valid Activity
+  const isEmpty = (obj) => {
+    for (var key in obj) {
+      if(obj.hasOwnProperty(key)) {
+        return false;
+      }
+    }
+    return true;
+  }
+  useEffect(() => {
+    if(isEmpty(colorID)) {
+      dispatchActivity({type: "update", payload: -1});
+    } else {
+      dispatchActivity({type: "update", payload: Object.keys(colorID)[0]}); // default
+    }
+  }, []);
+
+  // --- DO ON VARIABLE CHANGE
+
+  // Activity Selection Changed
+  useEffect(() => {
+    if (stateActivity.activity !== -1) {
+      // stateActivity.activity == ID
+      setActivityColor(colorID[stateActivity.activity]); // find 'color' with key 'ID'
+      setActivityName(activities[stateActivity.activity]); // find 'activity' with key 'color'
+    } else {
+      // default for when there are no created activities
+      setActivityColor("white");
+      setActivityName("No Activities: Go To Tags To Create Activity");
+    }
+  }, [stateActivity]);
 
 
   // PAGE CONSTANTS
@@ -51,8 +97,9 @@ const Home = (props) => {
       <div className="home-top">
         {/* ACTIVITY SELECT */}
         <div className="home-activity">
-          <Circle color={theme.color2} size={120} /> {/* TODO:  Change Color/Title depending on selected Activity Id*/}
-          <h2>Reading</h2>
+          <Circle color={activityColor} size={120} onClick={() => {setSelectorShow(!selectorShow)}} />
+          <h2>{activityName}</h2>
+          {selectorShow ? <ActivitySelector size={200} dispatchActivity={dispatchActivity}/> : null}
         </div>
         {/* TIMER */}
         <div className="home-timer">
@@ -63,11 +110,11 @@ const Home = (props) => {
         <div className="home-progress">
           <h1>Progress</h1>
           <h2>Daily</h2>
-          <ProgressBar type="daily" counter={stateCounter.counter}/>
+          <ProgressBar type="daily" counter={stateCounter.counter} color={activityColor} activity={stateActivity.activity}/>
           <h2>Weekly</h2>
-          <ProgressBar type="weekly" counter={stateCounter.counter}/>
+          <ProgressBar type="weekly" counter={stateCounter.counter} color={activityColor} activity={stateActivity.activity}/>
           <h2>Mothly</h2>
-          <ProgressBar type="monthly" counter={stateCounter.counter}/>
+          <ProgressBar type="monthly" counter={stateCounter.counter} color={activityColor} activity={stateActivity.activity}/>
         </div>
       </div>
 

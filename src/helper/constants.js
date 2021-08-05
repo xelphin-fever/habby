@@ -7,4 +7,11 @@ const theme = {
   "color3":"#F4A261"
 };
 
-export {theme};
+// TODO: add more color options
+const activityColors = [
+  "#2A9D8F",
+  "#E76F51",
+  "#F4A261",
+]
+
+export {theme, activityColors};

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Bar from '../stylesheets/components/progressBar';
+import {activityInfo} from '../helper/example';
 
 const ProgressBar = (props) => {
 
@@ -21,20 +22,34 @@ const ProgressBar = (props) => {
   const [progress, setProgress] = useState(0.25)
 
 
+  // GET INFO
   useEffect(() => {
-    let prog = (Math.round( 1000*((hours+(props.counter/3600))/goal)) ) / 1000;
+    if (props.activity!==-1 && props.activity!==undefined) {
+      // TODO: Get it from Firebase and not example.js (activityInfo)
+      setGoal(activityInfo[props.activity].goals[props.type]);
+      setHours(activityInfo[props.activity].done[props.type]);
+    } else { // default for no activity
+      setGoal(1);
+      setHours(0);
+    }
+  }, [props.activity, props.type]);
+
+  // SET PROGRESS
+  useEffect(() => {
+    // (hours done) / (goal) == progress
+    let prog = (Math.round(1000*( (hours+(props.counter/3600)) /goal))) / 1000; // progress to goal
     if (prog>=1){
-      setProgress(1)
+      setProgress(1); // in case surpass goal, keep at max
     } else {
-      setProgress(prog);
+      setProgress(prog); // otherwise, set progress to (hours done) / (goal)
     }
     console.log(`counter: ${props.counter} + hours: ${hours} = progress: ${prog} `);
-  }, [hours, goal, props.counter])
+  }, [hours, goal, props.counter]);
 
 
   
   return (
-    <Bar width={width} progress={progress*width}>
+    <Bar width={width} progress={progress*width} color={props.color}>
       <div className="progressBar-back"></div>
       <div className="progressBar-front"></div>
     </Bar>

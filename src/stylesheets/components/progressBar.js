@@ -15,6 +15,11 @@ const Bar = styled.div`
     position: absolute;
     top: 0;
   }
+  transition: 0.15s linear;
+  &:hover {
+    transform: scale(1.03) translate(-3px,-3px);
+    box-shadow: 8px 8px #c2c2c29d;
+  }
 `;
 
 

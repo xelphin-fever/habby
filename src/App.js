@@ -1,7 +1,7 @@
 import './App.scss';
-import React, {useState, useEffect, useReducer} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import {theme} from './helper/constants';
+// import {theme} from './helper/constants';
 
 import Home from './pages/Home'
 
