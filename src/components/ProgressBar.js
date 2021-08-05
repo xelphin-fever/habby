@@ -7,13 +7,8 @@ const ProgressBar = (props) => {
   // BAR WIDTH
   const width = 380;
 
-  // TODO: Collect goal and hours from Firebase using the props.type, update state
-
   // GOALS (in hours)
   const [goal, setGoal] = useState(2);
-
-  // TODO: Collect and calculate hours from Firebase and update on any change
-  // once counter is stopped, the record gets updated into Firebase hence the calculation and correct value of counter=0
 
   // HOURS (not including counter)
   const [hours, setHours] = useState(0.5);
@@ -23,6 +18,8 @@ const ProgressBar = (props) => {
 
 
   // GET INFO
+  // TODO: Collect goal and hours from Firebase using the props.activity and props.type, update state
+  // once counter is stopped, the record gets updated into Firebase hence the calculation and correct value of counter=0
   useEffect(() => {
     if (props.activity!==-1 && props.activity!==undefined) {
       // TODO: Get it from Firebase and not example.js (activityInfo)
@@ -45,7 +42,6 @@ const ProgressBar = (props) => {
     }
     console.log(`counter: ${props.counter} + hours: ${hours} = progress: ${prog} `);
   }, [hours, goal, props.counter]);
-
 
   
   return (

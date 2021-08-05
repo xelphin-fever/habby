@@ -33,6 +33,13 @@ const IconText = styled.div`
     color: ${props => props.textColor || "black"};
     font-size: ${props => (props.size/5.5)+"px" || "75px"};
   }
+  transition: 0.1s linear;
+  &:hover {
+    transform: scale(1.04)
+  }
+  &:active {
+    transform: scale(0.98);
+  }
 `;
 
 export {Circle, IconText};
